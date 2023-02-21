@@ -7,6 +7,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { db } from "../firebase.config";
+import { toast } from "react-toastify";
 import { setDoc, serverTimestamp, doc } from "firebase/firestore";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
@@ -48,7 +49,9 @@ function SignUpPage() {
 
       navigate("/");
     } catch (error) {
-      console.log(error);
+      toast.error("Something went wrong with registration", {
+        position: toast.POSITION.TOP_CENTER,
+      });
     }
   };
 

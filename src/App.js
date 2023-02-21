@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ExplorePage from "./pages/ExplorePage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import OffersPage from "./pages/OffersPage";
@@ -14,11 +16,12 @@ function App() {
       <Routes>
         <Route path="/" element={<ExplorePage />} />
         <Route path="/offers" element={<OffersPage />} />
-        <Route path="/profile" element={<SignInPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

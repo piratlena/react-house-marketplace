@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { toast } from "react-toastify";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
 
@@ -18,6 +20,27 @@ function SignInPage() {
       [e.target.id]: e.target.value,
     }));
   };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const auth = getAuth();
+
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+
+      if (userCredential.user) {
+        navigate("/");
+      }
+    } catch (error) {
+      toast.error("Bad User Credentials", {
+        position: toast.POSITION.TOP_CENTER,
+      });
+    }
+  };
   return (
     <>
       <div className="pageContainer">
@@ -26,7 +49,7 @@ function SignInPage() {
             <div>
               <p className="pageTitle">Welcome Back!</p>
             </div>
-            <form>
+            <form onSubmit={onSubmit}>
               <input
                 className="emailInput"
                 type="email"
