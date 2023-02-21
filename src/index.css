@@ -32,11 +32,13 @@ body {
 .app {
   width: 87.5rem;
   margin: 0 auto;
-  padding: 1rem 0 2.5rem 0;
-  background-color: #fff;
+  padding: 0 0 2.5rem 0;
+  background-color: #f2f4f8;
   box-shadow: 0 1rem 6rem 0.5rem rgba(97, 85, 81, 1);
   min-height: 117rem;
   margin: 4vw auto;
+  border-radius: 9px;
+  overflow: hidden;
 }
 
 a {
@@ -56,11 +58,11 @@ button {
 .nameInput,
 .textarea {
   box-shadow: rgba(0, 0, 0, 0.11);
-  border: none;
   background: #ffffff;
   border-radius: 3rem;
+  border: 2px black;
   height: 3rem;
-  width: 100%;
+  width: 400px;
   outline: none;
   font-family: "Montserrat", sans-serif;
   padding: 0 3rem;
@@ -128,6 +130,18 @@ button {
     margin: 3rem;
   }
 }
+.auth {
+  width: 700px;
+  height: 800px;
+  margin: 0 auto;
+  background: #f2f4f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.4);
+  margin-top: 200px;
+}
 
 .loadingSpinnerContainer {
   position: fixed;
@@ -159,30 +173,28 @@ button {
   }
 }
 
-.pageHeader {
+.pageTitle {
+  padding-top: 3rem;
   font-size: 2rem;
   font-weight: 800;
 }
 
 .navbar {
   width: 100%;
-  bottom: 0;
-  height: 85px;
-
+  height: 5.5rem;
   background-color: #ffffff;
-  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .navbarNav {
+  margin: 0;
   width: 100%;
-  margin-top: 0.75rem;
-  overflow-y: hidden;
 }
 
 .navbarListItems {
+  margin: 0;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -236,16 +248,18 @@ button {
 
 .forgotPasswordLink {
   cursor: pointer;
-  color: #00cc66;
+  color: var(--color-primary-light);
   font-weight: 600;
   text-align: right;
+}
+.forgotPasswordLink:hover {
+  color: var(--color-primary-dark);
 }
 
 .signInBar,
 .signUpBar {
-  margin-top: 3rem;
+  margin-top: 5rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   position: inherit;
 }
@@ -255,7 +269,10 @@ button {
 .signInText,
 .signUpText {
   cursor: pointer;
+  color: #fff;
+  font-size: 18px;
 }
+
 @media (min-width: 1024px) {
   .signInBar,
   .signUpBar {
@@ -271,19 +288,22 @@ button {
 
 .signInButton,
 .signUpButton {
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 3rem;
+  width: 12rem;
   height: 3rem;
-  background-color: #00cc66;
-  border-radius: 50%;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
+  border-radius: 5px;
+  transition: all 0.2s;
 }
-@media (min-width: 1024px) {
-  .signInButton,
-  .signUpButton {
-    margin-left: 3rem;
-  }
+button:hover {
+  transform: scale(1.07);
 }
 
 .socialLogin {
@@ -313,10 +333,13 @@ button {
 
 .registerLink {
   margin-top: 4rem;
-  color: #00cc66;
+  color: var(--color-primary-light);
   font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
+}
+.registerLink:hover {
+  color: var(--color-primary-dark);
 }
 
 @media (min-width: 1217px) {
