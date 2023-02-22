@@ -13,7 +13,7 @@ function NavBar() {
     }
   };
   return (
-    <header className="navbar">
+    <footer className="navbar">
       <nav className="navbarNav">
         <ul className="navbarListItems">
           <li className="navbarListItem">
@@ -69,7 +69,7 @@ function NavBar() {
           </li>
         </ul>
       </nav>
-    </header>
+    </footer>
   );
 }
 export default NavBar;

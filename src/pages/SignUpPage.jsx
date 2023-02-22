@@ -49,7 +49,7 @@ function SignUpPage() {
 
       navigate("/");
     } catch (error) {
-      toast.error("Something went wrong with registration", {
+      toast.error("Something went wrong with registrationgit", {
         position: toast.POSITION.TOP_CENTER,
       });
     }

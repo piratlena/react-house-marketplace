@@ -18,11 +18,12 @@ html::-webkit-scrollbar {
 
 body {
   font-family: "Montserrat", sans-serif;
-  background-image: linear-gradient(
+  background-color: #f2f4f8;
+  /* background-image: linear-gradient(
     to right bottom,
     var(--color-primary-light),
     var(--color-primary-dark)
-  );
+  ); */
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
@@ -34,9 +35,9 @@ body {
   margin: 0 auto;
   padding: 0 0 2.5rem 0;
   background-color: #f2f4f8;
-  box-shadow: 0 1rem 6rem 0.5rem rgba(97, 85, 81, 1);
+  /* box-shadow: 0 1rem 6rem 0.5rem rgba(97, 85, 81, 1); */
   min-height: 117rem;
-  margin: 4vw auto;
+  /* margin: 4vw auto; */
   border-radius: 9px;
   overflow: hidden;
 }
@@ -131,8 +132,8 @@ button {
   }
 }
 .auth {
-  width: 700px;
-  height: 800px;
+  width: 600px;
+  height: 700px;
   margin: 0 auto;
   background: #f2f4f8;
   display: flex;
@@ -140,7 +141,7 @@ button {
   align-items: center;
   border-radius: 10px;
   box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.4);
-  margin-top: 200px;
+  margin-top: 70px;
 }
 
 .loadingSpinnerContainer {
@@ -180,17 +181,22 @@ button {
 }
 
 .navbar {
-  width: 100%;
-  height: 5.5rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 85px;
   background-color: #ffffff;
+  z-index: 1000;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .navbarNav {
-  margin: 0;
   width: 100%;
+  margin-top: 0.75rem;
+  overflow-y: hidden;
 }
 
 .navbarListItems {
@@ -671,9 +677,14 @@ button:hover {
   font-size: 1rem;
   font-weight: 600;
   color: #ffffff;
-  background-color: #00cc66;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
   padding: 0.25rem 0.75rem;
   border-radius: 1rem;
+  transition: all 0.2s;
 }
 
 .profileDetailsHeader {
