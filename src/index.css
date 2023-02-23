@@ -6,6 +6,7 @@
   --color-gray-dark: #615551;
   --color-primary-light: #864ba2;
   --color-primary-dark: #6b0f1a;
+  --color-primary-bright: #b621fe;
 }
 
 * {
@@ -40,6 +41,8 @@ body {
   /* margin: 4vw auto; */
   border-radius: 9px;
   overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -700,7 +703,7 @@ button:hover {
 .changePersonalDetails {
   cursor: pointer;
   font-weight: 600;
-  color: #00cc66;
+  color: var(--color-primary-bright);
 }
 
 .profileCard {

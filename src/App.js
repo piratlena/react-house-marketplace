@@ -8,6 +8,7 @@ import ProfilePage from "./pages/ProfilePage";
 import SignInPage from "./pages/SingInPage";
 import SignUpPage from "./pages/SignUpPage";
 import NavBar from "./components/NavBar";
+import PrivateRoute from "./components/PrivateRoute";
 
 function App() {
   return (
@@ -16,7 +17,9 @@ function App() {
       <Routes>
         <Route path="/" element={<ExplorePage />} />
         <Route path="/offers" element={<OffersPage />} />
+        <Route path="/profile" element={<PrivateRoute />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route />
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
