@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import { setDoc, serverTimestamp, doc } from "firebase/firestore";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
+import OAuth from "../components/OAuth";
 
 function SignUpPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -112,6 +113,7 @@ function SignUpPage() {
                 </button>
               </div>
             </form>
+            <OAuth />
             <Link to="/sign-in" className="registerLink">
               Sign In Instead
             </Link>

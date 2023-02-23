@@ -32,7 +32,7 @@ body {
 }
 
 .app {
-  width: 87.5rem;
+  width: 1200px;
   margin: 0 auto;
   padding: 0 0 2.5rem 0;
   background-color: #f2f4f8;
@@ -136,7 +136,7 @@ button {
 }
 .auth {
   width: 600px;
-  height: 700px;
+  height: 750px;
   margin: 0 auto;
   background: #f2f4f8;
   display: flex;
@@ -145,6 +145,7 @@ button {
   border-radius: 10px;
   box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.4);
   margin-top: 70px;
+  padding-bottom: 1.5rem;
 }
 
 .loadingSpinnerContainer {
@@ -164,7 +165,8 @@ button {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #00cc66 transparent #00cc66 transparent;
+  border-color: var(--color-primary-bright) transparent
+    var(--color-primary-bright) transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -316,7 +318,7 @@ button:hover {
 }
 
 .socialLogin {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -341,11 +343,10 @@ button:hover {
 }
 
 .registerLink {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   color: var(--color-primary-light);
   font-weight: 600;
   text-align: center;
-  margin-bottom: 3rem;
 }
 .registerLink:hover {
   color: var(--color-primary-dark);
