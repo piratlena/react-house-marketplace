@@ -32,7 +32,7 @@ body {
 }
 
 .app {
-  width: 87.5rem;
+  width: 1200px;
   margin: 0 auto;
   padding: 0 0 2.5rem 0;
   background-color: #f2f4f8;
@@ -90,7 +90,11 @@ button {
 
 .primaryButton {
   cursor: pointer;
-  background: #00cc66;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
   border-radius: 1rem;
   padding: 0.85rem 2rem;
   color: #ffffff;
@@ -101,6 +105,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.2s;
 }
 
 .removeIcon {
@@ -122,7 +127,8 @@ button {
 .listingDetails,
 .category,
 .explore {
-  margin: 1rem;
+  width: 550px;
+  margin: 0 auto;
 }
 @media (min-width: 1024px) {
   .pageContainer,
@@ -131,12 +137,12 @@ button {
   .listingDetails,
   .category,
   .explore {
-    margin: 3rem;
+    width: 550px;
   }
 }
 .auth {
   width: 600px;
-  height: 700px;
+  height: 750px;
   margin: 0 auto;
   background: #f2f4f8;
   display: flex;
@@ -145,6 +151,7 @@ button {
   border-radius: 10px;
   box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.4);
   margin-top: 70px;
+  padding-bottom: 1.5rem;
 }
 
 .loadingSpinnerContainer {
@@ -164,7 +171,8 @@ button {
   width: 64px;
   height: 64px;
   border: 8px solid;
-  border-color: #00cc66 transparent #00cc66 transparent;
+  border-color: var(--color-primary-bright) transparent
+    var(--color-primary-bright) transparent;
   border-radius: 50%;
   animation: spin 1.2s linear infinite;
 }
@@ -316,7 +324,7 @@ button:hover {
 }
 
 .socialLogin {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -341,11 +349,10 @@ button:hover {
 }
 
 .registerLink {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   color: var(--color-primary-light);
   font-weight: 600;
   text-align: center;
-  margin-bottom: 3rem;
 }
 .registerLink:hover {
   color: var(--color-primary-dark);
@@ -468,17 +475,18 @@ button:hover {
 }
 
 .categoryListingImg {
-  width: 30%;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 1.5rem;
   object-fit: cover;
+  margin-right: 20px;
 }
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   .categoryListingImg {
     width: 19%;
     height: 217px;
   }
-}
+} */
 
 .categoryListingDetails {
   width: 65%;
@@ -506,7 +514,7 @@ button:hover {
   margin-top: 0.5rem;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #00cc66;
+  color: var(--color-primary-bright);
   margin-bottom: 0;
   display: flex;
   align-items: center;
@@ -796,10 +804,16 @@ button:hover {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s;
 }
 .formButtonActive {
-  background-color: #00cc66;
+  background-image: linear-gradient(
+    to right bottom,
+    var(--color-primary-light),
+    var(--color-primary-dark)
+  );
   color: #ffffff;
+  transition: all 0.2s;
 }
 
 .flex {
@@ -853,7 +867,7 @@ button:hover {
   width: 100%;
 }
 .formInputFile::-webkit-file-upload-button {
-  background-color: #00cc66;
+  background-color: var(--color-primary-light);
   border: none;
   color: #ffffff;
   font-weight: 600;
