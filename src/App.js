@@ -10,11 +10,11 @@ import SignInPage from "./pages/SingInPage";
 import SignUpPage from "./pages/SignUpPage";
 import NavBar from "./components/NavBar";
 import PrivateRoute from "./components/PrivateRoute";
+import CreateListingsPage from "./pages/CreateListingsPage";
 
 function App() {
   return (
     <div className="app">
-      <NavBar />
       <Routes>
         <Route path="/" element={<ExplorePage />} />
         <Route path="/offers" element={<OffersPage />} />
@@ -25,7 +25,9 @@ function App() {
         <Route path="/sign-in" element={<SignInPage />} />
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path="/create-listing" element={<CreateListingsPage />} />
       </Routes>
+      <NavBar />
       <ToastContainer />
     </div>
   );
