@@ -121,12 +121,20 @@ button {
   right: 20px;
 }
 
+.explore {
+  width: 1100px;
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .explore {
+    width: 100%;
+  }
+}
 .pageContainer,
 .offers,
 .profile,
 .listingDetails,
-.category,
-.explore {
+.category {
   width: 550px;
   margin: 0 auto;
 }
@@ -135,8 +143,7 @@ button {
   .offers,
   .profile,
   .listingDetails,
-  .category,
-  .explore {
+  .category {
     width: 550px;
   }
 }
@@ -442,7 +449,7 @@ button:hover {
 
 .exploreCategoryImg {
   min-height: 115px;
-  height: 15vw;
+  /* height: 15vw; */
   width: 100%;
   border-radius: 1.5rem;
   object-fit: cover;
