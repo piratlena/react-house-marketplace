@@ -11,6 +11,7 @@ import SignUpPage from "./pages/SignUpPage";
 import NavBar from "./components/NavBar";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateListingsPage from "./pages/CreateListingsPage";
+import ListingPage from "./pages/ListingPage";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/create-listing" element={<CreateListingsPage />} />
+        <Route
+          path="/category/:categoryName/:listingId"
+          element={<ListingPage />}
+        />
       </Routes>
       <NavBar />
       <ToastContainer />

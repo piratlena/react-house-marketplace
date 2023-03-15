@@ -7,6 +7,7 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { db } from "../firebase.config";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
@@ -116,7 +117,21 @@ function CreateListingsPage() {
       toast.error("Images not uploaded");
       return;
     });
-    console.log(imgUrls);
+    const formDataCopy = {
+      ...formData,
+      imgUrls,
+      timestamp: serverTimestamp(),
+    };
+    delete formDataCopy.images;
+    delete formDataCopy.address;
+    !formDataCopy.offer && delete formDataCopy.discountedPrice;
+
+    const docRef = await addDoc(collection(db, "listings"), formDataCopy);
+    toast.success("Listing saved", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+    navigate(`/category/${formDataCopy.type}/${docRef.id}`);
+    setLoading(false);
   };
 
   const onMutate = (e) => {
