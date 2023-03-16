@@ -12,6 +12,7 @@ import NavBar from "./components/NavBar";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateListingsPage from "./pages/CreateListingsPage";
 import ListingPage from "./pages/ListingPage";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
           path="/category/:categoryName/:listingId"
           element={<ListingPage />}
         />
+        <Route path="/contact/:landlordId" element={<Contact />} />
       </Routes>
       <NavBar />
       <ToastContainer />
