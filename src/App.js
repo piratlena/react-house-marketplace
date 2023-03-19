@@ -12,6 +12,7 @@ import NavBar from "./components/NavBar";
 import PrivateRoute from "./components/PrivateRoute";
 import CreateListingsPage from "./pages/CreateListingsPage";
 import ListingPage from "./pages/ListingPage";
+import EditListingPage from "./pages/EditListingPage";
 import Contact from "./pages/Contact";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path="/sign-up" element={<SignUpPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/create-listing" element={<CreateListingsPage />} />
+        <Route path="/edit-listing/:listingId" element={<EditListingPage />} />
         <Route
           path="/category/:categoryName/:listingId"
           element={<ListingPage />}

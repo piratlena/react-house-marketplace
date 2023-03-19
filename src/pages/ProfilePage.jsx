@@ -96,6 +96,8 @@ function ProfilePage() {
       });
     }
   };
+
+  const onEdit = (listingId) => navigate(`/edit-listing/${listingId}`);
   return (
     <div className="profile">
       <header className="profileHeader">
@@ -152,6 +154,7 @@ function ProfilePage() {
                   listing={listing.data}
                   id={listing.id}
                   onDelete={() => onDelete(listing.id)}
+                  onEdit={() => onEdit(listing.id)}
                 />
               ))}
             </ul>
