@@ -902,3 +902,17 @@ button:hover {
   font-size: 0.8rem;
   opacity: 0.75;
 }
+
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: "";
+  color: var(--color-primary-bright);
+}
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: "";
+  color: var(--color-primary-bright);
+}
+.swiper-pagination-bullet {
+  background: var(--color-primary-bright) !important;
+}
