@@ -5,43 +5,38 @@ import { ReactComponent as EditIcon } from "../assets/svg/editIcon.svg";
 import bedIcon from "../assets/svg/bedIcon.svg";
 import bathIcon from "../assets/svg/bathtubIcon.svg";
 
-function ListingItem({ listing, id, onDelete, onEdit }) {
+function ListingItem({ list, id, onDelete, onEdit }) {
   return (
     <li className="categoryListing">
-      <Link
-        to={`/category/${listing.type}/${id}`}
-        className="categoryListingLink"
-      >
+      <Link to={`/category/${list.type}/${id}`} className="categoryListingLink">
         <img
-          src={listing.imgUrls[0]}
-          alt={listing.name}
+          src={list.imgUrls[0]}
+          alt={list.name}
           className="categoryListingImg"
         />
         <div className="categoryListingDetails">
-          <p className="categoryListingLocation">{listing.location}</p>
-          <p className="categoryListingName">{listing.name}</p>
+          <p className="categoryListingLocation">{list.location}</p>
+          <p className="categoryListingName">{list.name}</p>
           <p className="categoryListingPrice">
             $
-            {listing.offer
-              ? listing.discountedPrice
+            {list.offer
+              ? list.discountedPrice
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              : listing.regularPrice
+              : list.regularPrice
                   .toString()
                   .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
-            {listing.type === "rent" && " / Month"}
+            {list.type === "rent" && " / Month"}
           </p>
           <div className="categoryListingInfoDiv">
             <img src={bedIcon} alt="bed" />
             <p className="categoryListingInfoText">
-              {listing.bedrooms > 1
-                ? `${listing.bedrooms} Bedrooms`
-                : "1 Bedroom"}
+              {list.bedrooms > 1 ? `${list.bedrooms} Bedrooms` : "1 Bedroom"}
             </p>
             <img src={bathIcon} alt="bath" />
             <p className="categoryListingInfoText">
-              {listing.bathrooms > 1
-                ? `${listing.bathrooms} Bathrooms`
+              {list.bathrooms > 1
+                ? `${list.bathrooms} Bathrooms`
                 : "1 Bathroom"}
             </p>
           </div>
@@ -51,7 +46,7 @@ function ListingItem({ listing, id, onDelete, onEdit }) {
         <DeleteIcon
           className="removeIcon"
           fill="#AD1DEB"
-          onClick={() => onDelete(listing.id, listing.name)}
+          onClick={() => onDelete(list.id, list.name)}
         />
       )}
       {onEdit && <EditIcon className="editIcon" onClick={() => onEdit(id)} />}

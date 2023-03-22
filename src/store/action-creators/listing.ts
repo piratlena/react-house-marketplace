@@ -1,4 +1,4 @@
-import { Dispatch } from "redux";
+import { AppDispatch } from "../index";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { useParams } from "react-router-dom";
 import { setListing, setLoading } from "../reducers/listingReducer";
@@ -7,7 +7,7 @@ import { db } from "../../firebase.config";
 import { toast } from "react-toastify";
 
 export const fetchListing = (params) => {
-  return async (dispatch) => {
+  return async (dispatch: AppDispatch) => {
     try {
       const docRef = doc(db, "listings", params.listingId);
       const docSnap = await getDoc(docRef);

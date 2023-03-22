@@ -1,8 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { IListing } from "../../types/ListingTypes";
 
-const initialState = {
+interface IListings {
+  listing: IListing[];
+  loading: boolean;
+  lastFetchedListing?: null;
+}
+const initialState: IListings = {
   listing: [],
   loading: true,
+  lastFetchedListing: null,
 };
 
 const listingSlice = createSlice({
@@ -15,8 +22,12 @@ const listingSlice = createSlice({
     setLoading(state) {
       state.loading = false;
     },
+    setLastFetchedListing(state, action) {
+      state.lastFetchedListing = action.payload;
+    },
   },
 });
 
-export const { setListing, setLoading } = listingSlice.actions;
+export const { setListing, setLoading, setLastFetchedListing } =
+  listingSlice.actions;
 export default listingSlice.reducer;
